@@ -11,7 +11,7 @@ unzip repo on your machine
 
 get write access for unziped files: 
 ```bash
-cd ts3_video
+cd ts3video_plugin_debian_12-master
 chmod 755 build-* CMakeLists.txt deploy.py
 ```
 
