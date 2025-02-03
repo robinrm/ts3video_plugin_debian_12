@@ -1,0 +1,1 @@
+--enable-vp8 --enable-realtime-only --enable-onthefly-bitpacking --enable-error-concealment --enable-runtime-cpu-detect --enable-webm-io --enable-libyuv --target=x86-linux-gcc --prefix=install
