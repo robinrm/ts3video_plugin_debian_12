@@ -1,50 +1,34 @@
-![Logo](projects/videoclient/res/logo-48x48.png)
+# Build Linux Server
+Tested on Debian 12.9:
 
-# Build Windows (current)
-The Windows build requires the following dependencies, which you have to install by yourself:
-- Git
-- Visual Studio 2022 (Compiler v143)
-- CMake >= 3.0.0
-- Qt 5.15.1 (32-bit, 64-bit)
-
-Checkout sources and dependencies:
+install following packages:
 ```bash
-$> cd $YOUR_CODING_DIR
-$> git clone https://github.com/mfreiholz/ts3video-runtimes.git
-$> git clone https://github.com/mfreiholz/ts3video.git
-$> cd ts3video
-$> git submodule init
-$> git submodule update
-```
-Since TS3VIDEO requires Qt, you have to define where it can be found.
-You have to do this by setting the following environment variables:
-- `OCS_QTDIR_X86_32`
-- `OCS_QTDIR_X86_64`
-
-And then simply run:
-```bash
-$> build-win<platform>-cmake.bat
-$> start-visual-studio-<platform>.bat
+apt install -y cmake gcc g++ qtbase5-dev qtdeclarative5-dev qtmultimedia5-dev libpcre3 libqt5websockets5-dev libqt5core5a libqt5network5 libqt5websockets5 
 ```
 
-# Build Linux (current)
-The linux build has not been tested for a while. It is planned to provide a docker container for it soon.
+Download github repository: https://github.com/robinrm/ts3video/tree/master
+unzip repo on your machine
 
-# Build Windows Release
-The last release has been build with the following requirements:
-- Windows 8.1 / 10 / 11
-- CMake >= 3.0.0
-- Qt 5.4.1 build with OpenGL (32+64 bit)
-	- https://download.qt.io/archive/qt/5.5/5.5.1/qt-opensource-windows-x86-msvc2013-5.5.1.exe
-	- https://download.qt.io/archive/qt/5.5/5.5.1/qt-opensource-windows-x86-msvc2013_64-5.5.1.exe
-- VC12 (Visual Studio 2013)
+get write access for unziped files: 
+```bash
+cd ts3_video
+chmod 755 build-* CMakeLists.txt deploy.py
+```
 
-# Build Linux Release (Server only)
-The last release has been build with the following requirements:
-- Ubuntu 14.04 / 15.10
-- Visual Studio Code Extensions
-	- C/C++
-	- CMake
-- `$> sudo apt-get install mesa-common-dev`
-- `$> sudo apt-get install astyle`
-- `./build-linux.bash`
+Project deployment:
+```bash
+./build-linux-cmake.bash
+./build-linux-make.bash
+```
+
+if everything was successfully the expected output should be like:
+`[100%] Built target videoserver`
+
+now you can run `./build-linux.bash` to collect all files.
+
+you will find the final videoserver plugin data in folder `build/server` keep in mind that the plugin should not be used as root user!
+
+you can start the server with `./build/server/videoserver.sh start`
+
+it's possible that the other plugins from this repository are also working properly.
+But in this fork the focus is only on the debian server installation and deployment.
