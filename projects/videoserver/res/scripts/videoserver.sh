@@ -16,7 +16,7 @@ case "$1" in
     echo "Starting the Conference Server"
     shift 1
     export LD_LIBRARY_PATH="${current_dir}"
-    "./ld.so" "./${binary_name}" "$@" &
+    "./ld-linux-x86-64.so.2" "./${binary_name}" "$@" &
     echo $! > ${binary_name}.pid
     ;;
 
