@@ -27,9 +27,9 @@ elif [ $ARCH = "x86_64" ]; then
 	cp /lib/x86_64-linux-gnu/libQt5Core.so.5 $OCS_BUILD_DIR_PATH/server/
 	cp /lib/x86_64-linux-gnu/libQt5Network.so.5 $OCS_BUILD_DIR_PATH/server/
 	cp /lib/x86_64-linux-gnu/libQt5WebSockets.so.5 $OCS_BUILD_DIR_PATH/server/
-	cp /lib/x86_64-linux-gnu/libicui18n.so.70 $OCS_BUILD_DIR_PATH/server/
-	cp /lib/x86_64-linux-gnu/libicuuc.so.70 $OCS_BUILD_DIR_PATH/server/
-	cp /lib/x86_64-linux-gnu/libicudata.so.70 $OCS_BUILD_DIR_PATH/server/
+	cp /lib/x86_64-linux-gnu/libicui18n.so.72 $OCS_BUILD_DIR_PATH/server/
+	cp /lib/x86_64-linux-gnu/libicuuc.so.72 $OCS_BUILD_DIR_PATH/server/
+	cp /lib/x86_64-linux-gnu/libicudata.so.72 $OCS_BUILD_DIR_PATH/server/
 
 	# only needed on debian 12
 	cp /lib/x86_64-linux-gnu/libdouble-conversion.so.3 $OCS_BUILD_DIR_PATH/server/
