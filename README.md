@@ -6,7 +6,7 @@ install following packages:
 apt install -y cmake gcc g++ qtbase5-dev qtdeclarative5-dev qtmultimedia5-dev libpcre3 libqt5websockets5-dev libqt5core5a libqt5network5 libqt5websockets5 
 ```
 
-Download github repository: https://github.com/robinrm/ts3video/tree/master
+Download github repository: https://github.com/robinrm/ts3video_plugin_debian_12
 unzip repo on your machine
 
 get write access for unziped files: 
